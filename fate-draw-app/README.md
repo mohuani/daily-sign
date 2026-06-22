@@ -1,5 +1,20 @@
-# Vue 3 + TypeScript + Vite
+# fate-draw-app
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+「命运之签」前端应用，基于 Vue 3 + Vite + TypeScript + Tailwind CSS。
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+完整说明（本地开发、Cloudflare Pages 部署）见仓库根目录 [README.md](../README.md)。
+
+## 快速开始
+
+```bash
+npm install
+npm run dev
+```
+
+## 常用命令
+
+| 命令 | 说明 |
+|------|------|
+| `npm run dev` | 启动开发服务器 |
+| `npm run build` | 生产构建，输出到 `dist/` |
+| `npm run preview` | 预览构建结果 |

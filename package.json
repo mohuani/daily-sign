@@ -1,10 +1,9 @@
 {
-  "devDependencies": {
-    "@tailwindcss/vite": "^4.3.1",
-    "tailwindcss": "^4.3.1"
-  },
-  "dependencies": {
-    "gsap": "^3.15.0",
-    "html-to-image": "^1.11.13"
+  "name": "daily-sign",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev --prefix fate-draw-app",
+    "build": "npm run build --prefix fate-draw-app",
+    "preview": "npm run preview --prefix fate-draw-app"
   }
 }
