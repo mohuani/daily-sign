@@ -14,14 +14,10 @@
 
 ```
 daily-sign/
-├── fate-draw-app/          # 前端应用（Vue + Vite）
-│   ├── src/
-│   │   ├── components/     # UI 组件
-│   │   ├── data/           # 108 条签文数据
-│   │   ├── utils/          # 抽签逻辑与本地存储
-│   │   └── ...
-│   ├── public/
-│   └── dist/               # 构建产物（部署时使用）
+├── fate-draw-app/          # Web 版（Vue + Vite，部署 Cloudflare Pages）
+├── fate-draw-miniprogram/  # 微信小程序版
+│   ├── miniprogram/
+│   └── project.config.json
 └── README.md
 ```
 
@@ -65,11 +61,20 @@ npm run preview
 
 1. 登录 [Cloudflare Dashboard](https://dash.cloudflare.com/) → **Workers & Pages** → **Create** → **Pages** → **Connect to Git**
 2. 选择本仓库并授权
-3. 填写构建设置：
+3. 填写构建设置（二选一）：
+
+**方案 A：Root directory 留空（仓库根目录）**
 
 | 配置项 | 值 |
 |--------|-----|
-| **Production branch** | `main`（或你的默认分支） |
+| **Root directory** | （留空） |
+| **Build command** | `npm run build` |
+| **Build output directory** | `fate-draw-app/dist` |
+
+**方案 B：Root directory 设为子目录（推荐）**
+
+| 配置项 | 值 |
+|--------|-----|
 | **Root directory** | `fate-draw-app` |
 | **Build command** | `npm ci && npm run build` |
 | **Build output directory** | `dist` |
@@ -108,6 +113,10 @@ npx wrangler pages deploy dist --project-name=fate-draw
 - 摇签动画：签筒摇动、飞签、签文展开
 - 本地历史：保留最近 30 次抽签记录
 - 签文分享：一键导出 PNG 签文卡片
+
+## 微信小程序版
+
+独立项目位于 [`fate-draw-miniprogram/`](./fate-draw-miniprogram/)，使用微信原生框架 + TypeScript 开发，功能与 Web 版对齐。详见 [fate-draw-miniprogram/README.md](./fate-draw-miniprogram/README.md)。
 
 ## 许可证
 

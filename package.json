@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "npm run dev --prefix fate-draw-app",
-    "build": "npm run build --prefix fate-draw-app",
+    "build": "npm ci --prefix fate-draw-app && npm run build --prefix fate-draw-app",
     "preview": "npm run preview --prefix fate-draw-app"
   }
 }
